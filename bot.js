@@ -58,6 +58,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                             content.data.children.forEach(personnage => {
                                 message += "\n\n**Champion**: "+personnage.metadata.legend_name;
                                 personnage.stats.forEach(stat => {
+                                    if(username == "Gadhena"){ stat.displayValue *= 100}
                                     message +="\n**"+stat.metadata.name+"**: "+stat.displayValue
                                 });
                             });
